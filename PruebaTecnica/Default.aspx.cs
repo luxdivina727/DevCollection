@@ -11,6 +11,7 @@ namespace PruebaTecnica
 {
     public partial class Default : Page
     {
+        #region Page load
         protected void Page_Load(object sender, EventArgs e)
         {
             try
@@ -26,23 +27,23 @@ namespace PruebaTecnica
                 throw;
             }
         }
+        #endregion
+
         #region Metodos Privados
-        private void CargarDatosPeliculas(List<Pelicula> peliculas)
+        private void CargarDatosPeliculas(List<Pelicula> listPeliculas)
         {
-            RepeterPeliculas.DataSource = peliculas;
+            RepeterPeliculas.DataSource = listPeliculas;
             RepeterPeliculas.DataBind();
 
             int count = 1;
 
             foreach (RepeaterItem repeaterItem in RepeterPeliculas.Items)
             {
-                Pelicula pelicula = peliculas.ElementAt(count - 1);
+                Pelicula pelicula = listPeliculas.ElementAt(count - 1);
                 ((Label)repeaterItem.FindControl("LabelTittle")).Text = $"<h5 class='card-title'>{pelicula.Tittle}</h5>";
-                ((Image)repeaterItem.FindControl("CardImagen")).ImageUrl = pelicula.Poster.ToString();
-                ((Label)repeaterItem.FindControl("LabelTipo")).Text = pelicula.Type.ToString();
-                ((Label)repeaterItem.FindControl("LabelAnio")).Text = pelicula.Year.ToString();
-                //((Label)repeaterItem.FindControl("LabelAnio")).Text = $"<small class='text-muted'>{ pelicula.Year.ToString()}</small";
-
+                ((Image)repeaterItem.FindControl("ImagePoster")).ImageUrl = pelicula.Poster.ToString();
+                ((Label)repeaterItem.FindControl("LabelType")).Text = pelicula.Type.ToString();
+                ((Label)repeaterItem.FindControl("LabelYear")).Text = pelicula.Year.ToString();
                 count = count + 1;
             }
         }
@@ -64,7 +65,7 @@ namespace PruebaTecnica
                 }
 
             }
-            catch (Exception) 
+            catch (Exception)
             {
                 throw;
             }

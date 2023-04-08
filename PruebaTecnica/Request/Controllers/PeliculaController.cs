@@ -26,17 +26,17 @@ namespace PruebaTecnica.Request.Controllers
 
         /* CRUD para consumir por medio de la API cualquier objeto de peliculas */
 
-        public static Task<List<Pelicula>> ListarPeliculas(string tittlePeliculas = null)
+        public static Task<List<Pelicula>> ListarPeliculas(string tittlePelicula = null)
         {
             return Task.Run(() =>
             {
-                List<Pelicula> peliculas = new List<Pelicula>();
+                List<Pelicula> listPeliculas = new List<Pelicula>();
                 string apiKey = ApiKey.ToString();
                 string apiToken = ApiToken.ToString();
                 string urlPeticion = ApiBaseUrl.ToString() +"?apiKey=" + apiKey+"&";
-                if (tittlePeliculas!=null)
+                if (tittlePelicula != null)
                 {
-                    urlPeticion=urlPeticion+ "&s=" + tittlePeliculas;
+                    urlPeticion=urlPeticion+ "&s=" + tittlePelicula;
                 }
                 else
                 {
@@ -61,7 +61,7 @@ namespace PruebaTecnica.Request.Controllers
                             jsonPeliculas = objectJson.ToString().Equals("") ? new JArray() : JArray.Parse(objectJson.ToString());
                             foreach (JObject jsonPelicula in jsonPeliculas.Children<JObject>())
                             {
-                                peliculas.Add(
+                                listPeliculas.Add(
                                     new Pelicula()
                                     {
                                         ImdbID = jsonPelicula["imdbID"].ToString(),
@@ -74,7 +74,7 @@ namespace PruebaTecnica.Request.Controllers
                         }
                     }
                 }
-                return peliculas;
+                return listPeliculas;
             });
         }
         #endregion

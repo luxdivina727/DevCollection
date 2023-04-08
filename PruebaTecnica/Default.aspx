@@ -33,13 +33,13 @@
                         <div class="card card-color mb-3">
                             <div class="row no-gutters">
                                 <div class="col-md-3">
-                                    <asp:Image runat="server" ID="CardImagen" Height="180px" Width="130px" />
+                                    <asp:Image runat="server" ID="ImagePoster" Height="180px" Width="130px" />
                                 </div>
                                 <div class="col-md-9">
                                     <div class="card-body">
                                         <asp:Label runat="server" ID="LabelTittle"></asp:Label>
-                                        <asp:Label runat="server" ID="LabelTipo"></asp:Label>
-                                        <asp:Label runat="server" ID="LabelAnio"></asp:Label>
+                                        <asp:Label runat="server" ID="LabelType"></asp:Label>
+                                        <asp:Label runat="server" ID="LabelYear"></asp:Label>
 
                                     </div>
                                 </div>
