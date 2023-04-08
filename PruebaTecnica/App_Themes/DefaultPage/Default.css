@@ -1,0 +1,14 @@
+﻿form-control .mt-lg{
+    width:1000px
+}
+.ms-n5 {
+    margin-right: -10px;
+}
+.card-color {
+    padding: 1rem;
+    background: linear-gradient(to bottom left, #333dc7 40%, #1795a9 100%);
+    color: #ffff;
+}
+.search-color {
+    border-color: #2d5f8359 !important;
+}
