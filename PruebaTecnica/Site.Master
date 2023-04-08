@@ -39,7 +39,7 @@
                     <div class="right"></div>
                 </div>
                 <li class="nav-item">
-                    <a class="nav-link" href="#"><i class="fas fa-tachometer-alt"></i>Inicio</a>
+                    <a class="nav-link" href="#"><i class="fas fa-tachometer-alt"></i></a>
                 </li>
             </ul>
         </div>

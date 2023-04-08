@@ -27,13 +27,13 @@
             </div>
         </section>
         <div class="row">
-            <section class="col-md-9 mt-5" aria-labelledby="gettingStartedTitle">
+            <section class="col-md-8 mt-5" aria-labelledby="gettingStartedTitle">
                 <asp:Repeater runat="server" ID="RepeterPeliculas">
                     <ItemTemplate>
                         <div class="card card-color mb-3">
                             <div class="row no-gutters">
                                 <div class="col-md-3">
-                                    <asp:Image runat="server" ID="CardImagen" Height="300px" Width="200px" />
+                                    <asp:Image runat="server" ID="CardImagen" Height="180px" Width="130px" />
                                 </div>
                                 <div class="col-md-9">
                                     <div class="card-body">
